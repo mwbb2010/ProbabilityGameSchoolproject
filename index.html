@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Burr's School of Rock Probability</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mr. Burr's School of Rock Probability</h1>
+            <p class="subtitle">Created by Mohamed with Mr. Burr's guidance</p>
+            <div class="movie-poster">
+                <img src="https://m.media-amazon.com/images/M/MV5BMjEwOTMzNjYzMl5BMl5BanBnXkFtZTcwNjczMTQyMQ@@._V1_.jpg" alt="School of Rock Movie Poster" class="poster-image">
+            </div>
+        </header>
+
+        <main>
+            <div class="game-section">
+                <h2>🎸 Coin Flip Challenge</h2>
+                <p class="game-description">Let's rock this probability! Flip the coin and see what fate has in store! 🎸</p>
+                <div class="coin-container">
+                    <div class="coin">
+                        <div class="heads">Heads</div>
+                        <div class="tails">Tails</div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="flipCoin">Rock the Coin!</button>
+                    <button id="resetCoin">Reset</button>
+                </div>
+                <div class="stats">
+                    <p>Heads: <span id="headsCount">0</span></p>
+                    <p>Tails: <span id="tailsCount">0</span></p>
+                    <p>Total Flips: <span id="totalFlips">0</span></p>
+                </div>
+            </div>
+
+            <div class="game-section">
+                <h2>🎸 Dice Roll Challenge</h2>
+                <p class="game-description">Roll the dice and rock your way to victory! 🎲</p>
+                <div class="dice-container">
+                    <div class="dice">1</div>
+                </div>
+                <div class="controls">
+                    <button id="rollDice">Rock the Dice!</button>
+                    <button id="resetDice">Reset</button>
+                </div>
+                <div class="stats">
+                    <p>Rolls: <span id="rollCount">0</span></p>
+                    <p>Average: <span id="averageRoll">0</span></p>
+                </div>
+            </div>
+
+            <div class="game-section">
+                <h2>🎸 Probability Quiz</h2>
+                <p class="game-description">Rock your probability knowledge! 🎸</p>
+                <div id="quiz-container">
+                    <p id="quiz-question"></p>
+                    <div id="quiz-options"></div>
+                </div>
+                <div class="controls">
+                    <button id="nextQuestion">Next Question</button>
+                </div>
+                <div class="stats">
+                    <p>Score: <span id="quizScore">0</span>/<span id="totalQuestions">0</span></p>
+                </div>
+            </div>
+
+            <div class="game-container">
+                <h2>🎸 Rock Band Challenge 🎸</h2>
+                <div id="band-game" class="game-section">
+                    <div id="band-game-status" class="game-status"></div>
+                    <div id="band-game-score" class="game-score">Score: 0</div>
+                    <div id="band-game-result" class="game-result"></div>
+                    <div id="band-game-actions" class="game-actions" style="display: none;"></div>
+                    <button id="start-band-game" class="game-button">Start Rock Band Challenge</button>
+                </div>
+            </div>
+
+            <div class="game-container">
+                <h2>🎸 Rock Band Battle 🎸</h2>
+                <div id="battle-game" class="game-section">
+                    <h2>🎸 Rock Band Battle 🎸</h2>
+                    <p class="game-description">Battle legendary rock bands using probability-based attacks!</p>
+                    <div class="battle-characters">
+                        <div class="player-character">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjEwOTMzNjYzMl5BMl5BanBnXkFtZTcwNjczMTQyMQ@@._V1_.jpg" alt="School of Rock - Jack Black" class="character-image player-image">
+                            <div class="character-name">Dewey Finn</div>
+                        </div>
+                        <div class="opponent-character">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjEwOTMzNjYzMl5BMl5BanBnXkFtZTcwNjczMTQyMQ@@._V1_.jpg" alt="School of Rock - Opponent" class="character-image opponent-image">
+                            <div id="opponent-character-name" class="character-name">Opponent</div>
+                        </div>
+                    </div>
+                    <div class="health-bars">
+                        <div class="health-bar">
+                            <span>Your Band</span>
+                            <div class="bar-container">
+                                <div id="player-health" class="health">100 HP</div>
+                            </div>
+                        </div>
+                        <div class="health-bar">
+                            <span id="opponent-name">Opponent</span>
+                            <div class="bar-container">
+                                <div id="opponent-health" class="health">100 HP</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="battle-status"></div>
+                    <div id="battle-actions"></div>
+                    <div id="battle-log"></div>
+                    <button id="start-battle">Start Battle</button>
+                </div>
+            </div>
+
+            <div id="rock-band-quest" class="game-section">
+                <h2>🎮 Rock Band Quest 🎮</h2>
+                <p class="game-description">Navigate through the 8-bit world to collect musical notes!</p>
+                <div class="character-selection">
+                    <h3>Choose Your Rock Star:</h3>
+                    <div class="characters">
+                        <div class="character-option" data-character="dewey">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjEwOTMzNjYzMl5BMl5BanBnXkFtZTcwNjczMTQyMQ@@._V1_.jpg" alt="Dewey Finn" class="character-sprite">
+                            <span>Dewey Finn</span>
+                        </div>
+                        <div class="character-option" data-character="stones">
+                            <img src="https://www.rollingstone.com/wp-content/uploads/2018/06/rs-108048-20140618-stones-x1800-1403104561.jpg" alt="Rolling Stones" class="character-sprite">
+                            <span>Rolling Stones</span>
+                        </div>
+                        <div class="character-option" data-character="zeppelin">
+                            <img src="https://www.rollingstone.com/wp-content/uploads/2018/06/led-zeppelin-iv-album-release-15b26d90-5ea8-4424-b555-0a6ddbf7e2f8.jpg" alt="Led Zeppelin" class="character-sprite">
+                            <span>Led Zeppelin</span>
+                        </div>
+                        <div class="character-option" data-character="queen">
+                            <img src="https://www.rollingstone.com/wp-content/uploads/2018/06/queen-news-of-the-world-opener-c5bda6ed-abf1-42db-bc55-1023077c784e.jpg" alt="Queen" class="character-sprite">
+                            <span>Queen</span>
+                        </div>
+                        <div class="character-option" data-character="acdc">
+                            <img src="https://www.rollingstone.com/wp-content/uploads/2018/06/acdc-back-in-black-35th-anniversary-f43d2c72-5326-4a8e-b9ff-5e22d7f31a40.jpg" alt="AC/DC" class="character-sprite">
+                            <span>AC/DC</span>
+                        </div>
+                        <div class="character-option" data-character="gnr">
+                            <img src="https://media.pitchfork.com/photos/5929a7d7ea9e61561daa56a2/1:1/w_600/178c4698.jpg" alt="Guns N' Roses" class="character-sprite">
+                            <span>Guns N' Roses</span>
+                        </div>
+                        <div class="character-option" data-character="metallica">
+                            <img src="https://www.metallica.com/on/demandware.static/-/Sites-Metallica-Library/default/dw8c4cbd83/images/homepage/metallica-hero-new.jpg" alt="Metallica" class="character-sprite">
+                            <span>Metallica</span>
+                        </div>
+                        <div class="character-option" data-character="floyd">
+                            <img src="https://www.pinkfloyd.com/assets/pink-floyd-dark-side-of-the-moon.jpg" alt="Pink Floyd" class="character-sprite">
+                            <span>Pink Floyd</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-container">
+                    <div class="game-stats">
+                        <div class="stat">Score: <span id="quest-score">0</span></div>
+                        <div class="stat">Notes: <span id="notes-collected">0</span></div>
+                        <div class="stat">Lives: <span id="lives">3</span></div>
+                    </div>
+                    <canvas id="game-canvas" width="400" height="400"></canvas>
+                    <div class="game-controls">
+                        <button id="start-quest" class="game-button">Start Quest</button>
+                        <div class="mobile-controls">
+                            <button id="left-btn">←</button>
+                            <button id="right-btn">→</button>
+                            <button id="jump-btn">↑</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
