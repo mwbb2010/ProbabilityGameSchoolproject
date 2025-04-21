@@ -711,14 +711,14 @@ class RockBandQuest {
         this.ctx = this.canvas.getContext('2d');
         this.selectedCharacter = 'dewey';
         this.characterStats = {
-            dewey: { speed: 5, jumpForce: 15, noteBonus: 1 },
-            stones: { speed: 6, jumpForce: 14, noteBonus: 1.2 },
-            zeppelin: { speed: 4, jumpForce: 18, noteBonus: 1.5 },
-            queen: { speed: 5, jumpForce: 16, noteBonus: 2 },
-            acdc: { speed: 7, jumpForce: 13, noteBonus: 1.1 },
-            gnr: { speed: 6, jumpForce: 16, noteBonus: 1.3 },
-            metallica: { speed: 5, jumpForce: 14, noteBonus: 1.4 },
-            floyd: { speed: 4, jumpForce: 17, noteBonus: 1.8 }
+            dewey: { speed: 5, jumpForce: 18, noteBonus: 1.2 },
+            stones: { speed: 6, jumpForce: 17, noteBonus: 1.4 },
+            zeppelin: { speed: 4, jumpForce: 20, noteBonus: 1.7 },
+            queen: { speed: 5, jumpForce: 19, noteBonus: 2.2 },
+            acdc: { speed: 7, jumpForce: 16, noteBonus: 1.3 },
+            gnr: { speed: 6, jumpForce: 19, noteBonus: 1.5 },
+            metallica: { speed: 5, jumpForce: 17, noteBonus: 1.6 },
+            floyd: { speed: 4, jumpForce: 20, noteBonus: 2 }
         };
         
         this.player = {
@@ -727,7 +727,7 @@ class RockBandQuest {
             width: 32,
             height: 32,
             speed: 5,
-            jumpForce: 8,
+            jumpForce: 10,
             velocityY: 0,
             isJumping: false,
             isRunning: false,
@@ -743,18 +743,18 @@ class RockBandQuest {
         this.obstacles = [];
         this.score = 0;
         this.notesCollected = 0;
-        this.lives = 3;
+        this.lives = 5;
         this.gameOver = false;
         this.keys = {};
         this.gravity = 0.5;
         this.ground = this.canvas.height - 30;
-        this.spawnInterval = 2000;
+        this.spawnInterval = 2500;
         this.lastSpawn = 0;
         this.gameLoop = null;
         this.pipes = [];
-        this.pipeGap = 150;
+        this.pipeGap = 200;
         this.pipeWidth = 80;
-        this.pipeSpeed = 3;
+        this.pipeSpeed = 2;
     }
 
     draw() {
@@ -1013,46 +1013,39 @@ class RockBandQuest {
 
         switch (this.selectedCharacter) {
             case 'stones':
-                // Satisfaction boost: Temporary speed increase
                 this.player.speed *= 1.5;
-                this.player.powerActive = true;
-                this.player.powerDuration = 120; // 2 seconds at 60fps
-                break;
-            case 'zeppelin':
-                // Stairway to Heaven: Higher jumps
-                this.player.jumpForce *= 1.3;
                 this.player.powerActive = true;
                 this.player.powerDuration = 180;
                 break;
-            case 'queen':
-                // Champions: Score multiplier
+            case 'zeppelin':
+                this.player.jumpForce *= 1.3;
                 this.player.powerActive = true;
-                this.player.powerDuration = 150;
+                this.player.powerDuration = 240;
+                break;
+            case 'queen':
+                this.player.powerActive = true;
+                this.player.powerDuration = 200;
                 break;
             case 'acdc':
-                // High Voltage: Faster movement and collection
                 this.player.speed *= 1.7;
                 this.player.powerActive = true;
-                this.player.powerDuration = 90;
+                this.player.powerDuration = 120;
                 break;
             case 'gnr':
-                // Welcome to the Jungle: All stats boost
                 this.player.speed *= 1.3;
                 this.player.jumpForce *= 1.2;
                 this.player.powerActive = true;
-                this.player.powerDuration = 100;
+                this.player.powerDuration = 150;
                 break;
             case 'metallica':
-                // Master of Puppets: Control nearby notes
                 this.attractNotes();
                 this.player.powerActive = true;
-                this.player.powerDuration = 60;
+                this.player.powerDuration = 90;
                 break;
             case 'floyd':
-                // Dark Side: Time slow effect
                 this.slowTime();
                 this.player.powerActive = true;
-                this.player.powerDuration = 200;
+                this.player.powerDuration = 250;
                 break;
         }
     }
@@ -1155,7 +1148,7 @@ class RockBandQuest {
             width: 32,
             height: 32,
             speed: 5,
-            jumpForce: 8,
+            jumpForce: 10,
             velocityY: 0,
             isJumping: false,
             isRunning: false,
@@ -1170,7 +1163,7 @@ class RockBandQuest {
         this.obstacles = [];
         this.score = 0;
         this.notesCollected = 0;
-        this.lives = 3;
+        this.lives = 5;
         this.gameOver = false;
         this.updateStats();
     }
